@@ -3719,3 +3719,180 @@ p {
   background: rgba(99, 102, 241, 0.15);
 }
 
+/* ============================================================
+   EXPENSEFLOW — FINAL TABLET / HALF-SCREEN RESPONSIVE FIX
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* Top navigation instead of overlapping sidebar */
+  .sidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    padding: 18px 20px;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: none;
+
+    overflow: visible;
+  }
+
+  .logo {
+    margin-bottom: 16px;
+  }
+
+  .navigation {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+
+    gap: 8px;
+
+    align-items: stretch;
+  }
+
+  .nav-item {
+    width: 100%;
+    min-height: 52px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    padding: 7px 5px;
+
+    border-radius: 11px;
+
+    text-align: center;
+
+    font-size: 11px;
+  }
+
+  .nav-item svg {
+    flex-shrink: 0;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  /* Main content must start BELOW navigation */
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+
+    margin-left: 0;
+
+    padding: 30px 24px 50px;
+
+    overflow-x: hidden;
+  }
+
+  .page-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .topbar,
+  .page-title-section {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 24px;
+  }
+
+  .topbar .add-button,
+  .page-title-section .add-button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .summary-grid,
+  .transaction-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ============================================================
+   SMALL TABLET / LARGE PHONE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .sidebar {
+    padding: 14px 12px;
+  }
+
+  .logo {
+    margin-bottom: 12px;
+  }
+
+  .navigation {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+
+    gap: 4px;
+  }
+
+  .nav-item {
+    min-height: 52px;
+
+    padding: 5px 2px;
+
+    font-size: 9px;
+
+    gap: 3px;
+  }
+
+  .main-content {
+    padding: 24px 15px 90px;
+  }
+
+  .summary-grid,
+  .transaction-stats,
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar .add-button,
+  .page-title-section .add-button {
+    width: 100%;
+  }
+}
